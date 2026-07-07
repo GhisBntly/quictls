@@ -1980,6 +1980,11 @@ X509 *SSL_get1_peer_certificate(const SSL *s)
 
     return r;
 }
+// AdvViz: add this one back instead of using a 'define' to allow linking with librpc.lib(netssltransport.obj) (Perforce dep)
+X509 *SSL_get_peer_certificate(const SSL *s)
+{
+    return SSL_get1_peer_certificate(s);
+}
 
 X509 *SSL_get0_peer_certificate(const SSL *s)
 {

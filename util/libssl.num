@@ -79,7 +79,7 @@ SSL_SESSION_print                       79	3_0_0	EXIST::FUNCTION:
 SSL_get_client_ciphers                  80	3_0_0	EXIST::FUNCTION:
 SSL_get_srtp_profiles                   81	3_0_0	EXIST::FUNCTION:SRTP
 SSL_use_certificate_ASN1                82	3_0_0	EXIST::FUNCTION:
-SSL_get_peer_certificate                83	3_0_0	NOEXIST::FUNCTION:
+SSL_get_peer_certificate                83	3_0_0	EXIST::FUNCTION:
 DTLSv1_2_server_method                  84	3_0_0	EXIST::FUNCTION:DEPRECATEDIN_1_1_0,DTLS1_2_METHOD
 SSL_set_cert_cb                         85	3_0_0	EXIST::FUNCTION:
 SSL_CTX_set_cookie_verify_cb            86	3_0_0	EXIST::FUNCTION:

@@ -1355,8 +1355,12 @@ int EVP_PKEY_type_names_do_all(const EVP_PKEY *pkey,
 int EVP_PKEY_type(int type);
 int EVP_PKEY_get_id(const EVP_PKEY *pkey);
 #define EVP_PKEY_id EVP_PKEY_get_id
+
 int EVP_PKEY_get_base_id(const EVP_PKEY *pkey);
-#define EVP_PKEY_base_id EVP_PKEY_get_base_id
+// AdvViz: add this one back to allow linking with librpc.lib(netsslcredentials.obj) (Perforce dep)
+int EVP_PKEY_base_id(const EVP_PKEY *pkey);
+//#define EVP_PKEY_base_id EVP_PKEY_get_base_id
+
 int EVP_PKEY_get_bits(const EVP_PKEY *pkey);
 #define EVP_PKEY_bits EVP_PKEY_get_bits
 int EVP_PKEY_get_security_bits(const EVP_PKEY *pkey);

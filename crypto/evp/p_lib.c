@@ -1040,6 +1040,11 @@ int EVP_PKEY_get_base_id(const EVP_PKEY *pkey)
 {
     return EVP_PKEY_type(pkey->type);
 }
+// AdvViz: add this one back instead of using a 'define' to allow linking with librpc.lib(netsslcredentials.obj) (Perforce dep)
+int EVP_PKEY_base_id(const EVP_PKEY *pkey)
+{
+    return EVP_PKEY_type(pkey->type);
+}
 
 /*
  * These hard coded cases are pure hackery to get around the fact
