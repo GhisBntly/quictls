@@ -786,6 +786,11 @@ int EVP_MD_get_type(const EVP_MD *md)
 {
     return md->type;
 }
+// AdvViz: add this one back to allow linking with webrtc.lib (to avoid rebuilding WebRTC)
+int EVP_MD_type(const EVP_MD *md)
+{
+    return md->type;
+}
 
 int EVP_MD_get_pkey_type(const EVP_MD *md)
 {
@@ -808,6 +813,11 @@ int EVP_MD_get_size(const EVP_MD *md)
         return -1;
     }
     return md->md_size;
+}
+// AdvViz: add this one back to allow linking with webrtc.lib (to avoid rebuilding WebRTC)
+int EVP_MD_size(const EVP_MD *md)
+{
+    return EVP_MD_get_size(md);
 }
 
 int EVP_MD_xof(const EVP_MD *md)

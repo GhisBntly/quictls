@@ -542,7 +542,10 @@ typedef int(EVP_PBE_KEYGEN_EX)(EVP_CIPHER_CTX *ctx, const char *pass,
 #define EVP_get_cipherbyobj(a) EVP_get_cipherbynid(OBJ_obj2nid(a))
 
 int EVP_MD_get_type(const EVP_MD *md);
-#define EVP_MD_type EVP_MD_get_type
+// AdvViz: add this one back to allow linking with webrtc.lib (to avoid rebuilding WebRTC)
+int EVP_MD_type(const EVP_MD *md);
+//#define EVP_MD_type EVP_MD_get_type
+
 #define EVP_MD_nid EVP_MD_get_type
 const char *EVP_MD_get0_name(const EVP_MD *md);
 #define EVP_MD_name EVP_MD_get0_name
@@ -554,8 +557,12 @@ int EVP_MD_names_do_all(const EVP_MD *md,
 const OSSL_PROVIDER *EVP_MD_get0_provider(const EVP_MD *md);
 int EVP_MD_get_pkey_type(const EVP_MD *md);
 #define EVP_MD_pkey_type EVP_MD_get_pkey_type
+
 int EVP_MD_get_size(const EVP_MD *md);
-#define EVP_MD_size EVP_MD_get_size
+// AdvViz: add this one back to allow linking with webrtc.lib (to avoid rebuilding WebRTC)
+//#define EVP_MD_size EVP_MD_get_size
+int EVP_MD_size(const EVP_MD *md);
+
 int EVP_MD_get_block_size(const EVP_MD *md);
 #define EVP_MD_block_size EVP_MD_get_block_size
 unsigned long EVP_MD_get_flags(const EVP_MD *md);
